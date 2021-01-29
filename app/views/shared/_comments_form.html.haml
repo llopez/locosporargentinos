@@ -1,0 +1,12 @@
+.comment-form
+  .sec-title
+    %h5 Leave Your Comment
+  %form.com-form{:action => "#"}
+    .row
+      .col-md-6
+        %input{:name => "name", :placeholder => "Enter Your Name", :type => "text", :value => ""}/
+      .col-md-6
+        %input{:name => "email", :placeholder => "Enter Your Email", :type => "text", :value => ""}/
+      .col-md-12
+        %textarea{:name => "name", :placeholder => "Your Comment Here"}
+        %button{:name => "button", :type => "button"} Post Comment

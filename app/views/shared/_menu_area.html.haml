@@ -1,0 +1,20 @@
+%section.menu-area
+  .container
+    .row
+      .col-md-9
+        .main-menu
+          %ul.list-unstyled.list-inline
+            %li.list-inline-item
+              %a
+                INICIO
+                %i.fa.fa-angle-down
+              %ul.dropdown.list-unstyled
+                - Category.all.each do |category|
+                  %li= link_to category.name, home_category_path(category.slug)
+            %li.list-inline-item
+              = link_to "FUTBOL PROFESIONAL", home_category_path('futbol-profesional')
+            %li.list-inline-item
+              = link_to '¿QUIENES SOMOS?', about_path
+      .col-md-3
+        .clock.text-right
+          %span#dg-clock

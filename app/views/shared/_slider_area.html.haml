@@ -1,0 +1,26 @@
+%section.slider-area
+  .container
+    .row
+      .col-lg-8.col-md-12.padding-fix-r
+        .owl-carousel.owl-slider
+          - @articles.each do |article|
+            .slider-content
+              = image_tag article.image.variant(resize_to_fill: [1000, 639], gravity: 'center'), class: 'img-fluid'
+              .slider-layer
+                %p
+                  = link_to article.title, article_path(article)
+                %ul.list-unstyled.list-inline
+                  - article.categories.each do |category|
+                    %li.list-inline-item= category.name.upcase
+                  %li.list-inline-item= l(article.created_at, format: "%B %d, %Y")
+      .col-lg-4.col-md-12.slider-fix
+        - @articles.take(2).each_with_index do |article, index|
+          .slider-sidebar{class: index.zero? ? 'sidebar-o' : ''}
+            = image_tag article.image.variant(resize_to_fill: [500, 327], gravity: 'center'), class: 'img-fluid'
+            .sidebar-layer
+              %p
+                = link_to article.title, article_path(article)
+              %ul.list-unstyled.list-inline
+                - article.categories.each do |category|
+                  %li.list-inline-item= category.name.upcase
+                %li.list-inline-item= l(article.created_at, format: "%B %d, %Y")

@@ -1,0 +1,162 @@
+.tab-widget
+  %ul.nav.nav-tabs{:role => "tablist"}
+    %li.nav-item
+      %a.nav-link.active{"data-toggle" => "tab", :href => "#recent"} Recent
+    %li.nav-item
+      %a.nav-link{"data-toggle" => "tab", :href => "#popular"} Popular
+    %li.nav-item
+      %a.nav-link{"data-toggle" => "tab", :href => "#comment"} Comment
+  / Tab panes
+  .tab-content
+    #recent.tab-pane.fade.show.active{:role => "tabpanel"}
+      .rec-item.d-flex
+        .rec-img
+          %a{:href => ""}
+            %img{:alt => "", :src => "images/lt-sm-6.jpg"}/
+        .img-content
+          %p
+            %a{:href => ""} These sentences are selected from various online news.
+          %span 20 Seconds ago
+      .rec-item.d-flex
+        .rec-img
+          %a{:href => ""}
+            %img{:alt => "", :src => "images/lt-sm-11.jpg"}/
+        .img-content
+          %p
+            %a{:href => ""} These sentences are selected from various online news.
+          %span 4 minutes ago
+      .rec-item.d-flex
+        .rec-img
+          %a{:href => ""}
+            %img{:alt => "", :src => "images/lt-sm-7.jpg"}/
+        .img-content
+          %p
+            %a{:href => ""} These sentences are selected from various online news.
+          %span 47 minutes ago
+      .rec-item.d-flex
+        .rec-img
+          %a{:href => ""}
+            %img{:alt => "", :src => "images/lt-sm-4.jpg"}/
+        .img-content
+          %p
+            %a{:href => ""} These sentences are selected from various online news.
+          %span 1 Hours ago
+    #popular.tab-pane.fade{:role => "tabpanel"}
+      .pop-item.d-flex
+        .pop-img
+          %a{:href => ""}
+            %img{:alt => "", :src => "images/lt-sm-3.jpg"}/
+        .img-content
+          %p
+            %a{:href => ""} These sentences are selected from various online news.
+          %ul.list-unstyled.list-inline
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+      .pop-item.d-flex
+        .pop-img
+          %a{:href => ""}
+            %img{:alt => "", :src => "images/lt-sm-8.jpg"}/
+        .img-content
+          %p
+            %a{:href => ""} These sentences are selected from various online news.
+          %ul.list-unstyled.list-inline
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+      .pop-item.d-flex
+        .pop-img
+          %a{:href => ""}
+            %img{:alt => "", :src => "images/lt-sm-9.jpg"}/
+        .img-content
+          %p
+            %a{:href => ""} These sentences are selected from various online news.
+          %ul.list-unstyled.list-inline
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+      .pop-item.d-flex
+        .pop-img
+          %a{:href => ""}
+            %img{:alt => "", :src => "images/lt-sm-12.jpg"}/
+        .img-content
+          %p
+            %a{:href => ""} These sentences are selected from various online news.
+          %ul.list-unstyled.list-inline
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+            %li.list-inline-item
+              %i.fa.fa-star
+    #comment.tab-pane.fade{:role => "tabpanel"}
+      .com-item.d-flex
+        .com-img
+          %a{:href => ""}
+            %img{:alt => "", :src => "images/com-1.png"}/
+        .img-content
+          %p
+            %a{:href => ""}
+              %span> James
+              \: Nesciunt quaerat ipsam fugiat impedit dignissimos unde...
+      .com-item.d-flex
+        .com-img
+          %a{:href => ""}
+            %img{:alt => "", :src => "images/com-2.png"}/
+        .img-content
+          %p
+            %a{:href => ""}
+              %span> Mary
+              \: Nesciunt quaerat ipsam fugiat impedit dignissimos unde...
+      .com-item.d-flex
+        .com-img
+          %a{:href => ""}
+            %img{:alt => "", :src => "images/com-1.png"}/
+        .img-content
+          %p
+            %a{:href => ""}
+              %span> John
+              \: Nesciunt quaerat ipsam fugiat impedit dignissimos unde...
+      .com-item.d-flex
+        .com-img
+          %a{:href => ""}
+            %img{:alt => "", :src => "images/com-2.png"}/
+        .img-content
+          %p
+            %a{:href => ""}
+              %span> Anna
+              \: Nesciunt quaerat ipsam fugiat impedit dignissimos unde...
+      .com-item.d-flex
+        .com-img
+          %a{:href => ""}
+            %img{:alt => "", :src => "images/com-1.png"}/
+        .img-content
+          %p
+            %a{:href => ""}
+              %span> Maxx
+              \: Nesciunt quaerat ipsam fugiat impedit dignissimos unde...

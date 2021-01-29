@@ -1,0 +1,80 @@
+/ Breadcrumb Area
+%section.breadcrumb-area
+  .container
+    .row
+      .col-md-12
+        .breadcrumb-box
+          %ul.list-unstyled.list-inline
+            %li.list-inline-item
+              %a{:href => "/"} Inicio
+              %i.fa.fa-angle-right
+            %li.list-inline-item= @article.title
+/ End Breadcrumb Area
+/ News Details Area
+%section.category-details
+  .container
+    .row
+      .col-lg-8.col-md-12
+        .row
+          .col-md-12
+            .news-heading
+              %h4= @article.title
+              %ul.list-unstyled.list-inline
+                %li.list-inline-item
+                  %i.fa.fa-user-o
+                  %a{:href => "#"} Administrador
+                %li.list-inline-item
+                  %i.fa.fa-calendar
+                  = l(@article.created_at, format: "%B %d, %Y")
+                -# %li.list-inline-item
+                -#   %i.fa.fa-commenting-o
+                -#   %a{:href => "#"} (09 Comments)
+            .news-content
+              = image_tag @article.image, class: 'img-fluid'
+              = @article.body.html_safe
+          .col-md-12
+            .social-tag.d-flex.justify-content-between
+              .social
+                %ul.list-unstyled.list-inline
+                  - @article.categories.each do |category|
+                    %li.list-inline-item
+                      = link_to category.name.upcase, home_category_path(category)
+ 
+          .col-md-12
+            -# .news-author.d-flex
+            -#   .author-img
+            -#     %img{:alt => "", :src => "images/author.jpg"}/
+            -#   .author-content
+            -#     %h6
+            -#       Author :
+            -#       %a{:href => ""} Md Tahmidur Rahman
+            -#     %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi doloribus unde molestias laborum delectus adipisci, eos repellat in debitis cum impedit numquam, architecto, facilis.
+            -#     %ul.list-unstyled.list-inline.f-social
+            -#       %li.list-inline-item
+            -#         %a{:href => ""}
+            -#           %i.fa.fa-facebook
+            -#       %li.list-inline-item
+            -#         %a{:href => ""}
+            -#           %i.fa.fa-twitter
+            -#       %li.list-inline-item
+            -#         %a{:href => ""}
+            -#           %i.fa.fa-linkedin
+            -#       %li.list-inline-item
+            -#         %a{:href => ""}
+            -#           %i.fa.fa-google-plus
+            -#       %li.list-inline-item
+            -#         %a{:href => ""}
+            -#           %i.fa.fa-rss
+            -#       %li.list-inline-item
+            -#         %a{:href => ""}
+            -#           %i.fa.fa-youtube
+          .col-md-12  
+            =# render 'shared/comments_list'
+          .col-md-12
+            =# render 'shared/comments_form'
+      .col-lg-4.col-md-12
+        .row
+          .col-md-12
+            = render 'shared/follow_us_sidebar'
+          .col-md-12
+            =# render 'shared/tab_widget'

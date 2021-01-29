@@ -1,0 +1,38 @@
+%footer.footer-area
+  .container
+    .row
+      .col-md-6
+        .f-about
+          = image_tag 'logo.png'
+          %ul.list-unstyled.f-contact
+            %li
+              %i.fa.fa-map-marker
+              Av. Gral. Paz 3755, Villa Lynch, Buenos Aires
+            %li
+              %i.fa.fa-envelope
+              argentinosjrsysugente@gmail.com
+            %li
+              %i.fa.fa-phone
+              11-6938-0078
+          = render 'shared/follow_us_footer'
+      .col-md-6
+        .f-post
+          .sec-title
+            %h5 Últimas publicaciones
+          - Article.all.take(3).each do |article|
+            .post-box.d-flex
+              .post-img
+                = link_to article_path(article) do
+                  = image_tag article.image.variant(resize_to_fill: [100, 100], gravity: 'center')
+              .post-con
+                %p
+                  = link_to article.title.truncate(25), article_path(article)
+                %span Feb 11, 2019
+      -# .col-md-4
+      -#   .f-newsltr
+      -#     .sec-title
+      -#       %h5 Newsletter
+      -#     %form.news-letter{:action => "#"}
+      -#       %input{:name => "name", :placeholder => "Your name", :type => "text", :value => ""}
+      -#         %input{:name => "email", :placeholder => "Your email address", :type => "text", :value => ""}
+      -#           %button{:name => "button", :type => "button"} Register

@@ -1,0 +1,45 @@
+%section.news-area
+  .container
+    .row
+      .col-lg-8.col-md-12
+        .row
+          .col-md-12
+            .latest-news
+              .tab-box.d-flex.justify-content-between
+                .sec-title
+                  %h5 Últimas noticias
+                / Nav tabs
+                %ul.nav.nav-tabs{:role => "tablist"}
+                  - @categories.each_with_index do |category, index|
+                    %li.nav-item
+                      %a.nav-link{"data-toggle" => "tab", :href => "##{category.slug}", class: index == 0 ? 'active' : ''}= category.name
+              / Tab panes
+              .tab-content
+                - @categories.each_with_index do |category, index|
+                  .tab-pane.fade.show{:role => "tabpanel", id: category.slug, class: index == 0 ? 'active' : ''}
+                    .row
+                      .col-md-6
+                        .lt-item-bg
+                          = link_to article_path(category.articles.last) do
+                            = image_tag category.articles.last.image.variant(resize_to_fill: [500, 326], gravity: 'center'), class: 'img-fluid'
+                          %h6
+                            = link_to category.articles.last.title, article_path(category.articles.last)
+                          %ul.list-unstyled.list-inline
+                            - category.articles.last.categories.each do |category|
+                              %li.list-inline-item= category.name.upcase
+                            %li.list-inline-item= l(category.articles.last.created_at, format: "%B %d, %Y")
+                          =# category.articles.last.body
+                      .col-md-6
+                        - category.articles.each do |article|
+                          .lt-item-sm.d-flex
+                            .lt-img
+                              = link_to article_path(article) do
+                                = image_tag category.articles.last.image.variant(resize_to_fill: [101, 81], gravity: 'center')
+                            .img-content
+                              %p
+                                = link_to article.title, article_path(article)
+                              %span= l(article.created_at, format: "%B %d, %Y")
+      .col-lg-4.col-md-12
+        .row
+          .col-md-12
+            = render 'shared/follow_us_sidebar'

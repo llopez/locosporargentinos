@@ -1,0 +1,72 @@
+%section.gallery-area
+  .container
+    .row
+      .col-lg-8.col-md-12
+        .image-gallery
+          .sec-title
+            %h5
+              Pictures
+              %i.fa.fa-caret-right
+          .image-gallery-box
+            .gallery-slider.owl-carousel
+              .gallery-item
+                = image_tag 'gallery-image-1.jpg', class: 'img-fluid'
+                .gallery-content
+                  %p
+                    %a{:href => ""} This handout will help you understand how paragraphs are formed. It is usually composed of several sentences that together develop one.
+              .gallery-item
+                = image_tag 'gallery-image-2.jpg', class: 'img-fluid'
+                .gallery-content
+                  %p
+                    %a{:href => ""} This handout will help you understand how paragraphs are formed. It is usually composed of several sentences that together develop one.
+          .image-gallery-list.d-flex.justify-content-between
+            .gallery-list-item
+              = image_tag 'popular-10.jpg', class: 'gallery-img'
+              .fc-icon
+                %a{:href => ""}
+                  %i.fa.fa-camera
+            .gallery-list-item
+              = image_tag 'popular-7.jpg', class: 'gallery-img'
+              .fc-icon
+                %a{:href => ""}
+                  %i.fa.fa-camera
+            .gallery-list-item
+              = image_tag 'popular-11.jpg', class: 'gallery-img'
+              .fc-icon
+                %a{:href => "#"}
+                  %i.fa.fa-camera
+            .gallery-list-item
+              = image_tag 'popular-5.jpg', class: 'gallery-img'
+              .fc-icon
+                %a{:href => "#"}
+                  %i.fa.fa-camera
+      .col-lg-4.col-md-12
+        .video-gallery
+          .sec-title
+            %h5
+              Videos
+              %i.fa.fa-caret-right
+          .video-lg
+            .video-table
+              .video-tablecell.text-center
+                %a#video-btn{:href => "https://www.youtube.com/watch?v=uXFUl0KcIkA"}
+                  %i.fa.fa-play
+          .video-list
+            .video-list-item.d-flex
+              .vid-img
+                = image_tag 'lt-sm-9.jpg'
+                %a{:href => "#"}
+                  %i.fa.fa-video-camera
+              .img-content
+                %p
+                  %a{:href => "#"} These sentences are select from online news.
+                %span 2 minutes ago
+            .video-list-item.d-flex
+              .vid-img
+                = image_tag 'lt-sm-11.jpg'
+                %a{:href => "#"}
+                  %i.fa.fa-video-camera
+              .img-content
+                %p
+                  %a{:href => "#"} These sentences are select from online news.
+                %span 42 minutes ago

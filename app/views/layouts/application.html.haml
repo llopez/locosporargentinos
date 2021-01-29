@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1"}
+    %title Aaaj
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all'
+  %body
+    = render 'shared/preloader'
+    = render 'shared/logo_area'
+    = render 'shared/menu_area'
+    = render 'shared/mobile_menu_area'
+    = yield
+    = render 'shared/footer_area'
+    = render 'shared/footer_btm'
+    = javascript_pack_tag 'application'
+    = javascript_pack_tag 'custom'
