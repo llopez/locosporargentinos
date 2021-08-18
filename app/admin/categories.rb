@@ -5,7 +5,7 @@ ActiveAdmin.register Category do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name
+  permit_params :name, :category_id
   #
   # or
   #
@@ -19,6 +19,7 @@ ActiveAdmin.register Category do
     f.semantic_errors
     f.inputs do
       f.input :name
+      f.input :parent, as: :select
     end
     f.actions
   end

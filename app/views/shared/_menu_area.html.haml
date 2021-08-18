@@ -4,15 +4,16 @@
       .col-md-9
         .main-menu
           %ul.list-unstyled.list-inline
-            %li.list-inline-item
-              %a
-                INICIO
-                %i.fa.fa-angle-down
-              %ul.dropdown.list-unstyled
-                - Category.all.each do |category|
-                  %li= link_to category.name, home_category_path(category.slug)
-            %li.list-inline-item
-              = link_to "FUTBOL PROFESIONAL", home_category_path('futbol-profesional')
+            - Category.parents.each do |parent_category|
+              %li.list-inline-item
+                %a
+                  = parent_category.name.upcase
+                  - if parent_category.children.any?
+                    %i.fa.fa-angle-down
+                - if parent_category.children.any?
+                  %ul.dropdown.list-unstyled
+                    - parent_category.children.each do |child_category|
+                      %li= link_to child_category.name, home_category_path(child_category.slug)
             %li.list-inline-item
               = link_to '¿QUIENES SOMOS?', about_path
       .col-md-3
