@@ -38,7 +38,7 @@
                 %ul.list-unstyled.list-inline
                   - @article.categories.each do |category|
                     %li.list-inline-item
-                      = link_to category.name.upcase, home_category_path(category)
+                      = link_to category.name.upcase, home_category_path(category.slug)
  
           .col-md-12
             -# .news-author.d-flex
