@@ -7,7 +7,7 @@
             - Category.parents.each do |parent_category|
               %li.list-inline-item
                 %a
-                  = parent_category.name.upcase
+                  = link_to parent_category.name.upcase, home_category_path(parent_category.slug)
                   - if parent_category.children.any?
                     %i.fa.fa-angle-down
                 - if parent_category.children.any?
